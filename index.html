@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Ping coming soon page</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="reset.css">
+</head>
+<body>
+  <main>
+    <div class="logo-container">
+      <img class="logo" src="./images/logo.svg" alt="">
+    </div>
+
+    <h2 class="title">We are launching <span class="title-accent">soon!</span></h2>
+    <p class="subtitle">Subscribe and get notified</p>
+    
+    <!-- Input and button -->
+    <div class="input-container">
+      <form action="#">
+        <input class="input-email" type="email" name="email" id="email" placeholder="Your email address...">
+        <p class="error-message"><i>Please provide a valid email address</i></p>
+        <button class="btn-submit" type="submit">Notify me</button>
+      </form>
+    </div>
+    
+
+    <!-- Graph image -->
+    <div class="graph-img-container">
+      <img class="graph img" src="./images/illustration-dashboard.png" alt="graph image">
+    </div>
+  </main>
+
+
+  <footer>
+    <div class="social-container">
+      <ion-icon name="logo-facebook"></ion-icon>
+      <ion-icon name="logo-twitter"></ion-icon>
+      <ion-icon name="logo-instagram"></ion-icon>
+    </div>
+    <p class="copyright">&copy; Copyright Ping. All rights reserved.</p>
+  </footer>
+  
+  <!-- ICONS IMPORT -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <!-- EMAIL CHECK SCRIPT -->
+  <script>
+    const button = document.querySelector(".btn-submit");
+    const emailInput = document.querySelector("#email");
+    const error = document.querySelector(".error-message");
+    
+    button.addEventListener("click", (e) => {
+      var emailInputValue = emailInput.value;
+      if( /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/.test(emailInputValue) != true) {
+          error.style.display = "block";
+          emailInput.style.borderColor = "red";
+      } 
+      else {
+        error.style.display = "none";
+      }
+    })
+  </script>
+</body>
+</html>

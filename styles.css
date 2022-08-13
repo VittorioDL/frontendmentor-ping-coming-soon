@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap');
+
+
+:root{
+    --font-family: 'Libre Franklin', sans-serif;
+    --font-size: 20px;
+    --fw-300: 300;
+    --fw-600: 600;
+    --fw-700: 700;
+
+    --clr-pr-blue: hsl(223, 87%, 63%);
+    --clr-sc-pale-blue: hsl(223, 100%, 88%);
+    --clr-sc-light-red: hsl(354, 100%, 66%);
+    --clr-nt-gray: hsl(0, 0%, 59%);
+    --clr-nt-vd-blue: hsl(209, 33%, 12%);
+}
+
+html, body{
+    font-size: var(--font-size);
+    font-family: var(--font-family);
+    background-color: #fff;
+}
+
+main, footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* ---MAIN SECTION STYLING--- */
+main{
+    padding: 2.5rem;
+}
+.logo-container{
+    margin-bottom: 2rem;
+}
+.title{
+    font-size: 2.4rem;
+    font-weight: var(--fw-300);
+    color: var(--clr-nt-gray);
+}
+.title-accent{
+    font-size: 2.4rem;
+    font-weight: var(--fw-700);
+    color: var(--clr-nt-vd-blue);
+}
+.subtitle{
+    margin-top: 0.5rem;
+    margin-bottom: 1.75rem;
+    font-size: 1rem;
+    color: var(--clr-nt-vd-blue);
+}
+
+/* INPUT AND BUTTON STYLING */
+.input-email{
+    width: 21rem;
+    height: 3rem;
+    border-radius: 1.5rem;
+    border: 1px solid hsl(229, 27%, 85%);
+    margin-right: 0.65rem;
+    padding-left: 1.5rem;
+    font-size: 0.9rem;
+}
+.input-email:focus{outline: none;}
+.input-email::placeholder{color: hsl(229, 27%, 85%);}
+.btn-submit{
+    width: 10.5rem;
+    height: 3rem;
+    border-radius: 1.5rem;
+    border-style: none;
+    background-color: var(--clr-pr-blue);
+    color: white;
+    font-weight: var(--fw-600);
+    font-size: 0.9rem;
+    box-shadow: 0px 3px 10px 3px rgba(0,0,0,0.2);
+}
+.btn-submit:hover{
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+/* GRAPH IMAGE STYLING */
+.graph-img-container{
+    margin-top: 4rem;
+    margin-bottom: 1.75rem;
+    max-width: 650px;
+}
+
+/* ---FOOTER SECTION STYLING--- */
+.social-container{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1.125rem;
+}
+ion-icon{
+    color: var(--clr-pr-blue);
+}
+.copyright{
+    color: var(--clr-nt-gray);
+    font-size: 0.8rem;
+}
+.error-message{
+    margin-top: 0.5rem;
+    position: absolute;
+    display: none;
+    color: red;
+    padding-left: 1.5rem;
+    font-size: 0.7rem;
+}
+
+@media (max-width: 750px) {
+    :root{
+        --font-size: 18px;
+    }
+
+    .input-email,
+    .btn-submit,
+    .input-container{
+        max-width: 500px;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    .error-message{
+        position: relative;
+        display: none;
+        color: red;
+        margin: -0.6rem auto 2rem auto;
+        font-size: clamp(0.7rem, 2.5vw, 0.9rem);
+        text-align: center;
+    }
+}
+@media (max-width: 560px) {
+    .title, .title-accent{
+        font-size: clamp(0.8rem, 7vw, 2.5rem);
+        text-align: center;
+    }
+    .subtitle{text-align: center;}
+}
